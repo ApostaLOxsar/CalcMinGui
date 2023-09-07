@@ -15,9 +15,9 @@
             <StackPanel>
                 <TextBlock Text="Test text" FontSize="30" HorizontalAlignment="Center" FontWeight="Bold" FontStyle="Italic" x:Name="textForRootPage">
                     <TextBlock.Foreground>
-                        <LinearGradientBrush>
+                        <LinearGradientBrush EndPoint="1,0" StartPoint="0,1">
                             <GradientStop Color="Black" Offset="0.1"/>
-                            <GradientStop Color="red" Offset="0.5"/>
+                            <GradientStop Color="Red" Offset="0.5"/>
                             <GradientStop Color="Blue" Offset="0.9"/>
                         </LinearGradientBrush>
                     </TextBlock.Foreground>
