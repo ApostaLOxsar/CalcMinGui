@@ -19,12 +19,16 @@ namespace TestLogin
     /// <summary>
     /// Логика взаимодействия для Page1.xaml
     /// </summary>
-    public partial class Login : Page
+    public partial class Login : Page, INavigationService
     {
+
         public Login()
         {
             InitializeComponent();
         }
+
+        public event EventHandler<PageChangedEventArgs> PageChanged;
+
         private void Button1_Click(object sender, RoutedEventArgs e)
         {
             textForRootPage.Text = LoginTextBox.Text;
@@ -32,7 +36,8 @@ namespace TestLogin
 
         private void ButtonRegistration_Click(object sender, RoutedEventArgs e)
         {
-           MainWindow.Registr.Navigate(new Registration());
+            PageChanged?.Invoke(this, new PageChangedEventArgs(new Registration()));
+
 
             /*
             работает

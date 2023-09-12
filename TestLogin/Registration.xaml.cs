@@ -18,11 +18,13 @@ namespace TestLogin
     /// <summary>
     /// Логика взаимодействия для Registration.xaml
     /// </summary>
-    public partial class Registration : Page
+    public partial class Registration : Page, INavigationService
     {
         public Registration()
         {
             InitializeComponent();
         }
+
+        public event EventHandler<PageChangedEventArgs> PageChanged;
     }
 }
