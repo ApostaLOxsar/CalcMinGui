@@ -15,9 +15,7 @@ namespace TestLogin
         {
             InitializeComponent();
             Registr.Navigate(new Login());
-           /* MyClassEvent MyClassEvent = new MyClassEvent();
-            MyClassEvent.MyDelegateEvent += PageSwap;*/
-
+            Login.myClassEvent.MyDelegateEvent += PageSwap;
         }
 
 

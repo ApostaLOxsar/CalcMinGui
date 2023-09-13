@@ -21,7 +21,7 @@ namespace TestLogin
     /// </summary>
     public partial class Login : Page
     {
-        public MyClassEvent myClassEvent = new MyClassEvent();
+        public static MyClassEvent myClassEvent = new MyClassEvent();
 
         public Login()
         {
