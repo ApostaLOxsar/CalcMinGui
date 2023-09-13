@@ -91,27 +91,56 @@
                 <TextBlock Text="Test text" FontSize="30" HorizontalAlignment="Center" FontWeight="Bold" FontStyle="Italic" x:Name="textForRootPage"/>
 
                 <Grid Margin="0,0,0,10">
-                    <Border x:Name="loginBorder" Background="#07eff7" Opacity="0.7" Height="30" CornerRadius="20" Margin="10,0,10,0" Padding="0,0,0,0" MinWidth="150" MaxWidth="700">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Border Grid.ColumnSpan="2" x:Name="loginBorder" Background="#07eff7" Opacity="0.7" Height="30" CornerRadius="20" Margin="10,0,10,0" Padding="0,0,0,0" MinWidth="150" MaxWidth="700">
                         <Border.Effect>
                             <DropShadowEffect BlurRadius="10" Color="LightBlue" ShadowDepth="5"/>
                         </Border.Effect>
                     </Border>
-                    <TextBlock Text="Логин" Padding="25,5,0,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                    <TextBox x:Name="LoginTextBox"  materialDesign:HintAssist.Hint="Что нибудь напишите например логин" MinWidth="50" MaxWidth="900" Margin="80,0,20,5" Padding="0,0,0,0" VerticalAlignment="Center" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalContentAlignment="Stretch" />
+                    <TextBlock x:Name="LoginText" Grid.Column="0" Text="Логин" Padding="0,5,0,0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <TextBox Grid.Column="1" x:Name="LoginTextBox" materialDesign:HintAssist.Hint="   Логин" MinWidth="50" MaxWidth="900" Margin="0,0,20,5" Padding="0,0,0,0" VerticalAlignment="Center" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalContentAlignment="Stretch">
+                        <!-- <TextBox.ToolTip>
+                            <ToolTip Placement="Mouse" x:Name="TooltipLogin">
+                                <TextBlock />
+                            </ToolTip>
+                        </TextBox.ToolTip> --> 
+                    </TextBox>
+
                 </Grid>
 
                 <Grid Margin="0,0,0,10">
-                    <Border Background="#07eff7" Opacity="0.7" Height="30" CornerRadius="20" Margin="10,0,10,0" Padding="0,0,0,0" MinWidth="150" MaxWidth="700">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Border Grid.ColumnSpan="2" Background="#07eff7" Opacity="0.7" Height="30" CornerRadius="20" Margin="10,0,10,0" Padding="0,0,0,0" MinWidth="150" MaxWidth="700">
                         <Border.Effect>
                             <DropShadowEffect BlurRadius="10" Color="LightBlue" ShadowDepth="5"/>
                         </Border.Effect>
                     </Border>
-                    <TextBlock Text="Пароль" Padding="25,5,0,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                    <PasswordBox x:Name="PasswordTextBox" materialDesign:HintAssist.Hint="И  сюда что нибудь напишите например пароль" Padding="{Binding ElementName=LoginTextBox, Path=Padding, Mode=TwoWay}" Margin="{Binding ElementName=LoginTextBox, Path=Margin, Mode=TwoWay}" MinWidth="50" MaxWidth="900" VerticalAlignment="Center" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"/>
+                    <TextBlock Grid.Column="0" Text="Пароль" Padding="0,5,0,0" VerticalAlignment="Center" HorizontalAlignment="{Binding ElementName=LoginText, Path=HorizontalAlignment}"/>
+                    <PasswordBox Grid.Column="1" x:Name="PasswordTextBox" materialDesign:HintAssist.Hint="   Пароль" Padding="{Binding ElementName=LoginTextBox, Path=Padding, Mode=TwoWay}" Margin="{Binding ElementName=LoginTextBox, Path=Margin, Mode=TwoWay}" MinWidth="50" MaxWidth="900" VerticalAlignment="Center" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"/>
+                </Grid>
+
+                <Grid Margin="0,0,0,10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Border Grid.ColumnSpan="2" Background="#07eff7" Opacity="0.7" Height="30" CornerRadius="20" Margin="10,0,10,0" Padding="0,0,0,0" MinWidth="150" MaxWidth="700">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="10" Color="LightBlue" ShadowDepth="5"/>
+                        </Border.Effect>
+                    </Border>
+                    <TextBlock Grid.Column="0" Text="Повторите пароль" Padding="0,5,0,0" VerticalAlignment="Center" HorizontalAlignment="{Binding ElementName=LoginText, Path=HorizontalAlignment}"/>
+                    <PasswordBox Grid.Column="1" x:Name="PasswordRepeatTextBox" materialDesign:HintAssist.Hint="   Повторите пароль" Padding="{Binding ElementName=LoginTextBox, Path=Padding, Mode=TwoWay}" Margin="{Binding ElementName=LoginTextBox, Path=Margin, Mode=TwoWay}" MinWidth="50" MaxWidth="900" VerticalAlignment="Center" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"/>
                 </Grid>
 
                 <Grid>
-                    <Button Style="{DynamicResource ButtonWithRound}" Content="Password" Margin="50,0" Padding="50,0" />
+                    <Button Style="{DynamicResource ButtonWithRound}" Content="Зарегистрироваться" HorizontalAlignment="Center" Width="200" Click="ButtonRegistration_Click"/>
                 </Grid>
             </StackPanel>
         </Border>

@@ -21,8 +21,7 @@ namespace TestLogin
     /// </summary>
     public partial class Login : Page
     {
-        public static MyClassEvent myClassEvent = new MyClassEvent();
-
+        
         public Login()
         {
             InitializeComponent();
@@ -31,12 +30,12 @@ namespace TestLogin
 
         private void Button1_Click(object sender, RoutedEventArgs e)
         {
-            textForRootPage.Text = LoginTextBox.Text;
+            textForRootPage.Text = "test";
         }
 
         private void ButtonRegistration_Click(object sender, RoutedEventArgs e)
         {
-            myClassEvent.MyEvent();
+            MainWindow.myClassEvent.MyEvent(new Registration());
         }
     }
 }

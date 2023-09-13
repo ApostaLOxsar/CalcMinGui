@@ -24,5 +24,26 @@ namespace TestLogin
         {
             InitializeComponent();
         }
+
+        private void ButtonRegistration_Click(object sender, RoutedEventArgs e)
+        {
+            string login = LoginTextBox.Text;
+            string pass = PasswordTextBox.Password;
+            string passRep = PasswordRepeatTextBox.Password;
+
+            if (login.Length < 5)
+            {
+                LoginTextBox.ToolTip = "Недопустимая длинна";
+                LoginTextBox.Foreground = Brushes.Red;
+                LoginTextBox.BorderBrush = Brushes.DarkRed;
+            }
+            else
+            {
+                LoginTextBox.Foreground = Brushes.Green;
+                LoginTextBox.BorderBrush = Brushes.DarkGreen;
+            }
+
+
+        }
     }
 }

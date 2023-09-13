@@ -10,18 +10,22 @@ namespace TestLogin
     /// </summary>
     public partial class MainWindow : Window
     {
-        //public static List<Page> pages = new List<Page>(3) { new Login()};
+        public static MyClassEvent myClassEvent = new MyClassEvent();
         public MainWindow()
         {
             InitializeComponent();
             Registr.Navigate(new Login());
-            Login.myClassEvent.MyDelegateEvent += PageSwap;
+            myClassEvent.MyDelegateEvent += PageSwap;
         }
 
-
-        public void PageSwap()
+        public void PageSwap(Page page)
         {
-            Registr.Navigate(new Registration());
+            Registr.Navigate(page);
+        }
+
+        public double[] GetHeightWidth()
+        {
+            return new double[] {ActualHeight, ActualWidth};
         }
     }
 }

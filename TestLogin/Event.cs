@@ -10,12 +10,12 @@ namespace TestLogin
 {
     public class MyClassEvent
     { 
-        public delegate void MyDelegate();
+        public delegate void MyDelegate(Page page);
       
         public event MyDelegate MyDelegateEvent;
-        public void MyEvent()
+        public void MyEvent(Page page)
         {
-            MyDelegateEvent.Invoke();
+            MyDelegateEvent.Invoke(page);
         }
 
        
