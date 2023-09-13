@@ -22,4 +22,15 @@ namespace TestLogin
             Page = page;
         }
     }
+
+    public delegate void EventDeleg();
+    public class MyClass
+    {
+        public event EventDeleg myEven = null;
+
+        public void InvokeDelegate()
+        {
+            myEven.Invoke();
+        }
+    }
 }
