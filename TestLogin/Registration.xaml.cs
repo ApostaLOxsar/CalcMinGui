@@ -33,7 +33,10 @@ namespace TestLogin
 
             if (login.Length < 5)
             {
-                LoginTextBox.ToolTip = "Недопустимая длинна";
+                ToolTip toolTip = new ToolTip();
+                toolTip.Content = "Недопустимая длинна";
+                toolTip.Placement = System.Windows.Controls.Primitives.PlacementMode.MousePoint;
+                LoginTextBox.ToolTip = toolTip;
                 LoginTextBox.Foreground = Brushes.Red;
                 LoginTextBox.BorderBrush = Brushes.DarkRed;
             }

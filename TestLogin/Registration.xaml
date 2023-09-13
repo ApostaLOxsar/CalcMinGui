@@ -102,11 +102,6 @@
                     </Border>
                     <TextBlock x:Name="LoginText" Grid.Column="0" Text="Логин" Padding="0,5,0,0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                     <TextBox Grid.Column="1" x:Name="LoginTextBox" materialDesign:HintAssist.Hint="   Логин" MinWidth="50" MaxWidth="900" Margin="0,0,20,5" Padding="0,0,0,0" VerticalAlignment="Center" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalContentAlignment="Stretch">
-                        <!-- <TextBox.ToolTip>
-                            <ToolTip Placement="Mouse" x:Name="TooltipLogin">
-                                <TextBlock />
-                            </ToolTip>
-                        </TextBox.ToolTip> --> 
                     </TextBox>
 
                 </Grid>
