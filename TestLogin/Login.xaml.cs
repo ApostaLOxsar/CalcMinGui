@@ -37,12 +37,7 @@ namespace TestLogin
         private void ButtonRegistration_Click(object sender, RoutedEventArgs e)
         {
             PageChanged?.Invoke(this, new PageChangedEventArgs(new Registration()));
-
-
-            /*
-            работает
-            Registration registrationWindow = new Registration();
-            registrationWindow.Show();*/
+            
         }
     }
 }
