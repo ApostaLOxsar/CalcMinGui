@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Navigation;
 
 namespace TestLogin
@@ -13,7 +15,15 @@ namespace TestLogin
         {
             InitializeComponent();
             Registr.Navigate(new Login());
+           /* MyClassEvent MyClassEvent = new MyClassEvent();
+            MyClassEvent.MyDelegateEvent += PageSwap;*/
+
         }
-        
+
+
+        public void PageSwap()
+        {
+            Registr.Navigate(new Registration());
+        }
     }
 }

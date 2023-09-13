@@ -19,15 +19,15 @@ namespace TestLogin
     /// <summary>
     /// Логика взаимодействия для Page1.xaml
     /// </summary>
-    public partial class Login : Page, INavigationService
+    public partial class Login : Page
     {
+        public MyClassEvent myClassEvent = new MyClassEvent();
 
         public Login()
         {
             InitializeComponent();
         }
 
-        public event EventHandler<PageChangedEventArgs> PageChanged;
 
         private void Button1_Click(object sender, RoutedEventArgs e)
         {
@@ -36,8 +36,7 @@ namespace TestLogin
 
         private void ButtonRegistration_Click(object sender, RoutedEventArgs e)
         {
-            PageChanged?.Invoke(this, new PageChangedEventArgs(new Registration()));
-            
+            myClassEvent.MyEvent();
         }
     }
 }
