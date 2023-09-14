@@ -23,6 +23,7 @@ namespace TestLogin
     /// </summary>
     public partial class Registration : Page
     {
+        
         public Registration()
         {
             InitializeComponent();
@@ -43,6 +44,12 @@ namespace TestLogin
             }
         }
 
+        private void ButtonLogin_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow.GoToBackPage.MyEvent();
+        }
+
+        
         private bool ChekLogin(string username)
         {
             if (username.Length < 5)

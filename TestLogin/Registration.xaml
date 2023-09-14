@@ -117,8 +117,10 @@
                         </Border.Effect>
                     </Border>
                     <TextBlock Grid.Column="0" Text="Пароль" Padding="0,5,0,0" VerticalAlignment="Center" HorizontalAlignment="{Binding ElementName=LoginText, Path=HorizontalAlignment}"/>
-                    <PasswordBox Grid.Column="1" x:Name="PasswordTextBox" materialDesign:HintAssist.Hint="   Пароль должен содержать латинские буквы и цифры" Padding="{Binding ElementName=LoginTextBox, Path=Padding, Mode=TwoWay}" Margin="{Binding ElementName=LoginTextBox, Path=Margin, Mode=TwoWay}" MinWidth="50" MaxWidth="900" VerticalAlignment="Center" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"/>
-                </Grid>
+                    <PasswordBox Grid.Column="1" x:Name="PasswordTextBox" materialDesign:HintAssist.Hint="   Пароль должен содержать латинские буквы и цифры" Padding="{Binding ElementName=LoginTextBox, Path=Padding, Mode=TwoWay}" Margin="{Binding ElementName=LoginTextBox, Path=Margin, Mode=TwoWay}" MinWidth="50" MaxWidth="900" VerticalAlignment="Center" Style="{StaticResource MaterialDesignFloatingHintRevealPasswordBox}"/>
+                    </Grid>
+
+               
 
                 <Grid Margin="0,0,0,10">
                     <Grid.ColumnDefinitions>
@@ -131,11 +133,16 @@
                         </Border.Effect>
                     </Border>
                     <TextBlock Grid.Column="0" Text="Повторите пароль" Padding="0,5,0,0" VerticalAlignment="Center" HorizontalAlignment="{Binding ElementName=LoginText, Path=HorizontalAlignment}"/>
-                    <PasswordBox Grid.Column="1" x:Name="PasswordRepeatTextBox" materialDesign:HintAssist.Hint="   Повторите пароль" Padding="{Binding ElementName=LoginTextBox, Path=Padding, Mode=TwoWay}" Margin="{Binding ElementName=LoginTextBox, Path=Margin, Mode=TwoWay}" MinWidth="50" MaxWidth="900" VerticalAlignment="Center" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"/>
+                    <PasswordBox Grid.Column="1" x:Name="PasswordRepeatTextBox" materialDesign:HintAssist.Hint="   Повторите пароль" Padding="{Binding ElementName=LoginTextBox, Path=Padding, Mode=TwoWay}" Margin="{Binding ElementName=LoginTextBox, Path=Margin, Mode=TwoWay}" MinWidth="50" MaxWidth="900" VerticalAlignment="Center" Style="{StaticResource MaterialDesignFloatingHintRevealPasswordBox}"/>
                 </Grid>
 
                 <Grid>
-                    <Button Style="{DynamicResource ButtonWithRound}" Content="Зарегистрироваться" HorizontalAlignment="Center" Width="200" Click="ButtonRegistration_Click"/>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Style="{DynamicResource ButtonWithRound}" Content="Назад" HorizontalAlignment="Center" Width="200" Click="ButtonLogin_Click" IsCancel="True"/>
+                    <Button Grid.Column="1" Style="{DynamicResource ButtonWithRound}" Content="Зарегистрироваться" HorizontalAlignment="Center" Width="200" Click="ButtonRegistration_Click" IsDefault="True"/>
                 </Grid>
             </StackPanel>
         </Border>

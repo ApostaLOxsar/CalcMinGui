@@ -35,7 +35,7 @@ namespace TestLogin
 
         private void ButtonRegistration_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow.myClassEvent.MyEvent(new Registration());
+            MainWindow.GoToPage.MyEvent();
         }
     }
 }
