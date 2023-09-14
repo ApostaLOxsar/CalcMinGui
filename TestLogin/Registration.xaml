@@ -101,7 +101,7 @@
                         </Border.Effect>
                     </Border>
                     <TextBlock x:Name="LoginText" Grid.Column="0" Text="Логин" Padding="0,5,0,0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    <TextBox Grid.Column="1" x:Name="LoginTextBox" materialDesign:HintAssist.Hint="   Логин" MinWidth="50" MaxWidth="900" Margin="0,0,20,5" Padding="0,0,0,0" VerticalAlignment="Center" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalContentAlignment="Stretch">
+                    <TextBox Grid.Column="1" x:Name="LoginTextBox" materialDesign:HintAssist.Hint="   Не менее 5 символов" MinWidth="50" MaxWidth="900" Margin="0,0,20,5" Padding="0,0,0,0" VerticalAlignment="Center" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalContentAlignment="Stretch">
                     </TextBox>
 
                 </Grid>
@@ -117,7 +117,7 @@
                         </Border.Effect>
                     </Border>
                     <TextBlock Grid.Column="0" Text="Пароль" Padding="0,5,0,0" VerticalAlignment="Center" HorizontalAlignment="{Binding ElementName=LoginText, Path=HorizontalAlignment}"/>
-                    <PasswordBox Grid.Column="1" x:Name="PasswordTextBox" materialDesign:HintAssist.Hint="   Пароль" Padding="{Binding ElementName=LoginTextBox, Path=Padding, Mode=TwoWay}" Margin="{Binding ElementName=LoginTextBox, Path=Margin, Mode=TwoWay}" MinWidth="50" MaxWidth="900" VerticalAlignment="Center" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"/>
+                    <PasswordBox Grid.Column="1" x:Name="PasswordTextBox" materialDesign:HintAssist.Hint="   Пароль должен содержать латинские буквы и цифры" Padding="{Binding ElementName=LoginTextBox, Path=Padding, Mode=TwoWay}" Margin="{Binding ElementName=LoginTextBox, Path=Margin, Mode=TwoWay}" MinWidth="50" MaxWidth="900" VerticalAlignment="Center" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"/>
                 </Grid>
 
                 <Grid Margin="0,0,0,10">
