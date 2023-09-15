@@ -21,7 +21,7 @@ namespace TestLogin
             GoToBackPage.MyDelegateEvent += PageBackSwap;
         }
 
-        public void PageRegistration()
+        private void PageRegistration()
         {
             if (Registr.CanGoForward)
             {
@@ -30,7 +30,7 @@ namespace TestLogin
             else Registr.Navigate(new Registration());
         }
 
-        public void PageBackSwap()
+        private void PageBackSwap()
         {
             Registr.GoBack();
         }

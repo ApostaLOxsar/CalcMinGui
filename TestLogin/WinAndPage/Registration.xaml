@@ -117,7 +117,7 @@
                         </Border.Effect>
                     </Border>
                     <TextBlock Grid.Column="0" Text="Пароль" Padding="0,5,0,0" VerticalAlignment="Center" HorizontalAlignment="{Binding ElementName=LoginText, Path=HorizontalAlignment}"/>
-                    <PasswordBox Grid.Column="1" x:Name="PasswordTextBox" materialDesign:HintAssist.Hint="   Пароль должен содержать латинские буквы и цифры" Padding="{Binding ElementName=LoginTextBox, Path=Padding, Mode=TwoWay}" Margin="{Binding ElementName=LoginTextBox, Path=Margin, Mode=TwoWay}" MinWidth="50" MaxWidth="900" VerticalAlignment="Center" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"/>
+                    <PasswordBox Grid.Column="1" x:Name="PasswordTextBox" materialDesign:HintAssist.Hint="   Пароль должен содержать латинские буквы и цифры" Padding="{Binding ElementName=LoginTextBox, Path=Padding, Mode=TwoWay}" Margin="{Binding ElementName=LoginTextBox, Path=Margin, Mode=TwoWay}" MinWidth="50" MaxWidth="900" VerticalAlignment="Center" Style="{StaticResource MaterialDesignFloatingHintRevealPasswordBox}"/>
                 </Grid>
 
                

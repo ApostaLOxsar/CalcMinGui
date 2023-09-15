@@ -8,9 +8,10 @@ using System.Windows.Controls;
 
 namespace TestLogin
 {
+
+    public delegate void MyDelegate();
     public class MyClassEvent
-    { 
-        public delegate void MyDelegate();
+    {
 
         public event MyDelegate MyDelegateEvent;
         public void MyEvent()
@@ -18,7 +19,7 @@ namespace TestLogin
             MyDelegateEvent.Invoke();
         }
 
-       
+
     }
 
 }
