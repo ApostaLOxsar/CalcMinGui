@@ -15,6 +15,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MaterialDesignThemes.Wpf;
+using TestLogin;
+using TestLogin.Logic.DateBase;
 
 namespace TestLogin
 {
@@ -40,7 +42,17 @@ namespace TestLogin
 
             if (chekLogin && chekPass)
             {
-                textForRootPage.Text = "Успех";
+                
+                Login user = new Login(login, pass);
+                MainWindow.locator.Data.Db.Logins.Add(user);
+                MainWindow.locator.Data.Db.SaveChanges();
+                List<Login> users = MainWindow.locator.Data.Db.Logins.ToList();
+                string str = "";
+                foreach (Login userList in users)
+                {
+                    str += "Login: " + userList.GetLogin + " | ";
+                }
+                textForRootPage.Text = str;
             }
         }
 
