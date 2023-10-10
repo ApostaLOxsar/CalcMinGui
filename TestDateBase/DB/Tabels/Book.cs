@@ -12,5 +12,10 @@ namespace TestDateBase.DB.Tabels
         public string Title { get; set; }
 
         public People people { get; set; }
+
+        public override string ToString()
+        {
+            return "Id: " + Id.ToString() + " Title: " + Title;
+        }
     }
 }
