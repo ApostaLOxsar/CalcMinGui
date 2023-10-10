@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,6 +9,7 @@ namespace TestLogin.Logic.DateBase
 {
     public class Time
     {
+        [Key]
         public int id_time { get; set; }
         public int id_login { get; set; }
         public int id_timeoff { get; set; }
