@@ -26,34 +26,52 @@ namespace TestDateBase
             {
                 People people = new People()
                 {
-                    Name = "Fofgafo",
+                    Name = "Fofgafosdfg",
                     Age = 142
                 };
 
-                /*Book book = new Book()
+                Book book = new Book()
                 {
                     people = people,
-                    Title = "Bgsdfgr"
-                };*/
+                    Title = "Bgsdfgrsrwter123"
+                };
+
+                /*context.Peoples.Add(people);
+                context.Books.Add(book);
+                context.SaveChanges();*/
 
 
-                var res = from peoples in context.Peoples
-                          join book in context.Books on peoples.Id equals book.people.Id
+
+                /*var res = from peoples in context.Peoples
+                          join books in context.Books on peoples.Id equals book.people.Id
                           orderby peoples.Id
                           select new
                           {
                               peoples.Id,
                               peoples.Name,
                               peoples.Age,
-                              book.Title,
+                              books.Title,
+                              BookId = book.Id,
+                          };*/
+
+                var res = from peoples in context.Peoples
+                          /*join books in context.Books on peoples.Id equals book.people.Id*/
+                          //orderby peoples.Id
+                          select new
+                          {
+                              peoples.Id,
+                              peoples.Name,
+                              peoples.Age,
+                              //books.Title,
                               BookId = book.Id,
                           };
+
 
 
                 foreach (var result in res)
                 {
                     Console.WriteLine($"Id: {result.Id} \t Book: {result.BookId} \t Name {result.Name}" +
-                        $" \t Age: {result.Age} \t Title: {result.Title}");
+                        $" \t Age: {result.Age} \t");// Title: {result.Title}");
                     
                 }
                 //SELECT * FROM Books JOIN People ON People.Id = Books.people_Id

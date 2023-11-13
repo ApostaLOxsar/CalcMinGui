@@ -1,15 +1,12 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿
 using Microsoft.EntityFrameworkCore;
 
-namespace TestDateBase.DB.Tabels
+namespace TestDBWithEFCore.DB.Tabels
 {
-
     public class People
     {
-        [Key]
         public int Id { get; set; }
-        [Required]
+
         public string Name { get; set; }
         public int? Age { get; set; }
 

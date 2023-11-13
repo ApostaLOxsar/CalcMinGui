@@ -11,7 +11,7 @@ namespace TestDateBase.DB
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
             SetSqlGenerator("System.Data.SQLite", new SQLiteMigrationSqlGenerator());
 
         }

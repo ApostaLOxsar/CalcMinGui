@@ -77,6 +77,10 @@
     <Compile Include="Migrations\202310100946457_recreate.designer.cs">
       <DependentUpon>202310100946457_recreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202310170805353_init.cs" />
+    <Compile Include="Migrations\202310170805353_init.designer.cs">
+      <DependentUpon>202310170805353_init.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -88,6 +92,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202310100946457_recreate.resx">
       <DependentUpon>202310100946457_recreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310170805353_init.resx">
+      <DependentUpon>202310170805353_init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
