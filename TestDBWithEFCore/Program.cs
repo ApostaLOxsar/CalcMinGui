@@ -1,4 +1,5 @@
-﻿using TestDBWithEFCore.DB;
+﻿using System.Text.RegularExpressions;
+using TestDBWithEFCore.DB;
 using TestDBWithEFCore.DB.Tabels;
 
 using (var context = new ApplicationContext())
@@ -23,7 +24,17 @@ using (var context = new ApplicationContext())
     context.SaveChanges();
 
 
+    var result = from p in context.Peoples
+                 join b in context.Books
+                 on p.Id equals b.people.Id
+                 select new {p.Id, p.Name, p.Age, b.Title, BookId = b.Id };
+
+    Console.WriteLine(Logic.CreatePeople() != null ? Logic.CreatePeople():"People not create");
     
+    //Logic.PrintResalt(result);
+
+
+    /*
     foreach(var item in context.Peoples.ToList())
     {
         Console.WriteLine(item);
@@ -32,5 +43,5 @@ using (var context = new ApplicationContext())
     foreach (var item in context.Books.ToList())
     {
         Console.WriteLine(item.ToString() + "   " + item.people.Id);
-    }
+    }*/
 }
