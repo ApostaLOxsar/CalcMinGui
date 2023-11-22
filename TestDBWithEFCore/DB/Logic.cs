@@ -17,8 +17,8 @@ namespace TestDBWithEFCore.DB
 
             foreach (var item in inp)
             {
-                res = item.ToString().Replace("{", "--> ").Replace("}", "<--").Replace(",", " |");
-                Console.WriteLine(res);
+                //res = item.ToString().Replace("{", "--> ").Replace("}", "<--").Replace(",", " |");
+                Console.WriteLine(item);
             }
 
             Console.WriteLine();
@@ -26,12 +26,15 @@ namespace TestDBWithEFCore.DB
         public static People CreatePeople()
         {
             Console.Write("Name: ");
-            string Name;
+            string? Name;
             int Age;
+
+            //input name
             try
             {
                 Name = Console.ReadLine();
-                if (Name.Length == 0 ) {
+                if (string.IsNullOrWhiteSpace(Name))
+                {
                     throw new Exception("Пустая строка");
                 }
             }
@@ -40,6 +43,9 @@ namespace TestDBWithEFCore.DB
                 return null;
             }
 
+
+
+            //input age
             try
             {
                 Console.Write("Age: ");
@@ -53,6 +59,9 @@ namespace TestDBWithEFCore.DB
                 };
             }
 
+
+
+
             return new People()
             {
                 Name = Name,
@@ -60,6 +69,8 @@ namespace TestDBWithEFCore.DB
 
             };
         }
+    
+
     }
 
 

@@ -2,46 +2,63 @@
 using TestDBWithEFCore.DB;
 using TestDBWithEFCore.DB.Tabels;
 
-using (var context = new ApplicationContext())
+internal class Program
 {
-    People people = new People()
+    private static void Main(string[] args)
     {
-        Name = "this is name for people",
-        Age = 142
-    };
+        using (var context = new ApplicationContext())
+        {
 
-    Book book = new Book()
-    {
-        people = people,
-        Title = "this is title for book"
-    };
-
-
-    context.Database.EnsureDeleted();
-    context.Database.EnsureCreated();
-    context.Peoples.Add(people);
-    context.Add(book);
-    context.SaveChanges();
+            //context.Database.EnsureDeleted();
+            //context.Database.EnsureCreated();
+            //context.Peoples.Add(people);
+            //context.Add(book);
+            //context.SaveChanges();
 
 
-    var result = from p in context.Peoples
-                 join b in context.Books
-                 on p.Id equals b.people.Id
-                 select new {p.Id, p.Name, p.Age, b.Title, BookId = b.Id };
-
-    Console.WriteLine(Logic.CreatePeople() != null ? Logic.CreatePeople():"People not create");
-    
-    //Logic.PrintResalt(result);
+            var result = from p in context.Peoples
+                         join b in context.Books
+                         on p.Id equals b.people.Id
+                         select new { p.Id, p.Name, p.Age, b.Title, BookId = b.Id };
+          
 
 
-    /*
-    foreach(var item in context.Peoples.ToList())
-    {
-        Console.WriteLine(item);
+            /*People peopleNew = Logic.CreatePeople();
+            if (peopleNew != null)
+            {
+                context.Add(peopleNew);
+                Console.WriteLine(peopleNew.Name + " <-- Добавлен");
+            }
+            context.SaveChanges();*/
+
+
+            /*
+            Logic.PrintResalt(context.Peoples);
+            Console.Write("\n --> ");
+
+
+            Book book = new Book()
+            {
+                people = context.Peoples.Find(1),
+                Title = "this is title for book for people with id = 1"
+            };
+            */
+
+            Logic.PrintResalt(result);
+
+            //context.SaveChanges();
+
+
+            /*
+            foreach(var item in context.Peoples.ToList())
+            {
+                Console.WriteLine(item);
+            }
+
+            foreach (var item in context.Books.ToList())
+            {
+                Console.WriteLine(item.ToString() + "   " + item.people.Id);
+            }*/
+        }
     }
-
-    foreach (var item in context.Books.ToList())
-    {
-        Console.WriteLine(item.ToString() + "   " + item.people.Id);
-    }*/
 }
